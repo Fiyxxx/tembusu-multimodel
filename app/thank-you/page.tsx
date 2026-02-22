@@ -17,6 +17,18 @@ export default function ThankYouPage() {
           onClick={() => router.push('/')}
           variant="secondary"
         />
+        <p className="font-mono text-sm mt-8 leading-relaxed text-gray-700">
+          shoutout to our dear{' '}
+          <a
+            href="https://www.nus.edu.sg/celc/staff/dr-gene-navera/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            prof dr gene navera
+          </a>
+          {' '}for the guidance and support in this super engaging module!
+        </p>
       </div>
     </main>
   );
