@@ -32,7 +32,9 @@ export default function ScenarioPage() {
   if (!scenario) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <p className="font-mono">Loading...</p>
+        <div className="bg-white border-4 border-black p-8">
+          <p className="font-mono text-xl">Loading scenario...</p>
+        </div>
       </main>
     );
   }
