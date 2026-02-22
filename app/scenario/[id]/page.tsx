@@ -66,17 +66,27 @@ export default function ScenarioPage() {
 
       {scenario.type === 'clickable' ? (
         <>
-          <ScenarioImage
-            imageSrc={scenario.image}
-            imageAlt={scenario.imageAlt}
-            hotspots={scenario.hotspots}
-            onAllClicked={handleAllHotspotsClicked}
-          />
+          <div className="w-full max-w-4xl">
+            <ScenarioImage
+              imageSrc={scenario.image}
+              imageAlt={scenario.imageAlt}
+              hotspots={scenario.hotspots}
+              onAllClicked={handleAllHotspotsClicked}
+            />
+          </div>
 
-          {showLessonButton && !showLesson && (
+          {showLessonButton && !showLesson && id !== 1 && (
             <Button
               text="What is the lesson here?"
               onClick={() => setShowLesson(true)}
+              className="celebrate"
+            />
+          )}
+
+          {showLessonButton && !showLesson && id === 1 && (
+            <Button
+              text="Continue"
+              onClick={handleContinue}
               className="celebrate"
             />
           )}
@@ -91,7 +101,7 @@ export default function ScenarioPage() {
         </>
       ) : (
         <>
-          <div className="relative w-full max-w-4xl mx-auto">
+          <div className="w-full max-w-4xl">
             <div className="relative w-full aspect-video">
               <img
                 src={scenario.image}

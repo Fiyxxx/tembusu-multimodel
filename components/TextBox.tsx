@@ -14,7 +14,7 @@ export default function TextBox({
   text,
   onContinue,
   showContinue = false,
-  speed = 40
+  speed = 20
 }: TextBoxProps) {
   const [displayedText, setDisplayedText] = useState('');
   const [isComplete, setIsComplete] = useState(false);
