@@ -61,8 +61,8 @@ export default function ScenarioPage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-4 gap-8">
-      <h1 className="font-mono text-2xl font-bold">{scenario.title}</h1>
+    <main className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8 gap-4 md:gap-8">
+      <h1 className="font-mono text-xl md:text-2xl font-bold text-center px-4">{scenario.title}</h1>
 
       {scenario.type === 'clickable' ? (
         <>
