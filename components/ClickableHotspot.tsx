@@ -23,14 +23,13 @@ export default function ClickableHotspot({
   return (
     <button
       onClick={(e) => onClick(e)}
-      className="absolute cursor-pointer bg-transparent hotspot-pulse focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+      className="absolute cursor-pointer bg-white/40 hover:bg-white/60 border-2 border-white rounded-full hotspot-pulse-visible focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all"
       style={{
         top: position.top,
         left: position.left,
-        width: position.width,
-        height: position.height,
-        minWidth: '44px',
-        minHeight: '44px'
+        width: '48px',
+        height: '48px',
+        transform: 'translate(-50%, -50%)'
       }}
       aria-label={ariaLabel}
       tabIndex={0}

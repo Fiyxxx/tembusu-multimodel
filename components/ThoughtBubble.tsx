@@ -7,14 +7,12 @@ interface ThoughtBubbleProps {
   text: string;
   position: { top: string; left: string };
   onClose: () => void;
-  autoCloseDelay?: number; // milliseconds
 }
 
 export default function ThoughtBubble({
   text,
   position,
-  onClose,
-  autoCloseDelay = 4000
+  onClose
 }: ThoughtBubbleProps) {
   const [displayedText, setDisplayedText] = useState('');
   const [mounted, setMounted] = useState(false);
@@ -35,18 +33,10 @@ export default function ThoughtBubble({
       } else {
         clearInterval(interval);
       }
-    }, 40);
+    }, 20);
 
     return () => clearInterval(interval);
   }, [text]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      onClose();
-    }, autoCloseDelay);
-
-    return () => clearTimeout(timer);
-  }, [autoCloseDelay, onClose]);
 
   const bubble = (
     <div
@@ -60,13 +50,6 @@ export default function ThoughtBubble({
     >
       <div className="bg-white border-3 border-black p-4 relative">
         <p className="font-mono text-sm leading-relaxed">{displayedText}</p>
-        <button
-          onClick={onClose}
-          className="absolute top-1 right-1 w-6 h-6 flex items-center justify-center hover:bg-gray-100 border border-black"
-          aria-label="Close thought bubble"
-        >
-          ✕
-        </button>
         {/* Triangle pointer */}
         <div
           className="absolute border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black"
