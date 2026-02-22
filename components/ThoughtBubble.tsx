@@ -9,6 +9,18 @@ interface ThoughtBubbleProps {
   onClose: () => void;
 }
 
+// Parse text with **bold** markers and return formatted JSX
+function parseTextWithBold(text: string) {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      const boldText = part.slice(2, -2);
+      return <strong key={index} className="font-bold">{boldText}</strong>;
+    }
+    return <span key={index}>{part}</span>;
+  });
+}
+
 export default function ThoughtBubble({
   text,
   position,
@@ -49,7 +61,7 @@ export default function ThoughtBubble({
       }}
     >
       <div className="bg-white border-3 border-black p-4 relative">
-        <p className="font-mono text-sm leading-relaxed">{displayedText}</p>
+        <p className="font-mono text-sm leading-relaxed">{parseTextWithBold(displayedText)}</p>
         {/* Triangle pointer */}
         <div
           className="absolute border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black"

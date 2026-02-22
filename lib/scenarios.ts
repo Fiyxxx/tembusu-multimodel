@@ -30,20 +30,20 @@ export const scenarios: Scenario[] = [
     hotspots: [
       {
         id: 1,
-        position: { top: '40%', left: '65%', width: '15%', height: '25%' },
-        thought: "Wow…. the army officers are so fierce and professional!!! Singapore is actually so protected despite her small size. #proudtobesingaporean",
+        position: { top: '35%', left: '79%', width: '15%', height: '25%' },
+        thought: "Wow…. the **army officers** are so **fierce and professional**!!! Singapore is actually so **protected** despite her small size. **#proudtobesingaporean**",
         ariaLabel: "Man taking photo of parade"
       },
       {
         id: 2,
-        position: { top: '35%', left: '25%', width: '12%', height: '20%' },
-        thought: "OMG that's my grandson right there! I'm so proud of him standing strong to defend Singapore and representing the army today! #proudtobesingaporean",
+        position: { top: '30%', left: '25%', width: '12%', height: '20%' },
+        thought: "OMG that's my **grandson** right there! I'm so **proud** of him standing strong to **defend Singapore** and representing the army today! **#proudtobesingaporean**",
         ariaLabel: "Grandmother watching parade"
       },
       {
         id: 3,
-        position: { top: '50%', left: '10%', width: '10%', height: '20%' },
-        thought: "The police are so cool in their uniforms and holding their big guns! I want to be one of them when I grow up! #proudtobesingaporean",
+        position: { top: '50%', left: '15%', width: '10%', height: '20%' },
+        thought: "The **police** are so **cool** in their uniforms and holding their **big guns**! I want to be one of them when I grow up! **#proudtobesingaporean**",
         ariaLabel: "Child watching parade"
       }
     ],
@@ -58,20 +58,20 @@ export const scenarios: Scenario[] = [
     hotspots: [
       {
         id: 1,
-        position: { top: '60%', left: '75%', width: '15%', height: '25%' },
-        thought: "So hot sia… Singapore's weather really cannot make it. AND so crowded… such a small country still got so many people?",
+        position: { top: '80%', left: '85%', width: '15%', height: '25%' },
+        thought: "So **hot** sia… Singapore's weather really cannot make it. AND so **crowded**… such a **small country** still got so many people?",
         ariaLabel: "Woman on bottom right"
       },
       {
         id: 2,
-        position: { top: '45%', left: '15%', width: '15%', height: '30%' },
-        thought: "NDP is so vibes… wait what is this performance about again? I just missed the whole montage because I was taking selfies for Instagram.",
+        position: { top: '54%', left: '20%', width: '15%', height: '30%' },
+        thought: "NDP is so **vibes**… wait what is this performance about again? I just **missed the whole montage** because I was **taking selfies for Instagram**.",
         ariaLabel: "Woman on left taking selfies"
       },
       {
         id: 3,
-        position: { top: '40%', left: '45%', width: '15%', height: '30%' },
-        thought: "Wow this is a once in a lifetime experience! Being here with all my fellow Singaporeans, all wearing red and white and waving the national flag… that's what I'll remember most from today.",
+        position: { top: '50%', left: '51%', width: '15%', height: '30%' },
+        thought: "Wow this is a **once in a lifetime experience**! Being here with all my **fellow Singaporeans**, all wearing **red and white** and **waving the national flag**… that's what I'll remember most from today.",
         ariaLabel: "Woman in middle celebrating"
       }
     ],

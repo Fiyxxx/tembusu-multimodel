@@ -10,7 +10,7 @@ export default function Home() {
     <main className="min-h-screen flex items-center justify-center p-4">
       <div className="bg-white border-4 border-black p-12 max-w-2xl w-full text-center">
         <h1 className="font-mono text-3xl mb-4 font-bold">
-          Spectacles and Society in the Local context!
+          Spectacles and Society - NDP Edition!
         </h1>
         <p className="font-mono text-lg mb-8">
           by Chloe, Megan, Han Sheng

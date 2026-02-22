@@ -11,13 +11,15 @@ interface ScenarioImageProps {
   imageAlt: string;
   hotspots: Hotspot[];
   onAllClicked: () => void;
+  onClickedCountChange?: (count: number) => void;
 }
 
 export default function ScenarioImage({
   imageSrc,
   imageAlt,
   hotspots,
-  onAllClicked
+  onAllClicked,
+  onClickedCountChange
 }: ScenarioImageProps) {
   const [clickedHotspots, setClickedHotspots] = useState<Set<number>>(new Set());
   const [activeThought, setActiveThought] = useState<{
@@ -41,6 +43,10 @@ export default function ScenarioImage({
     const newClicked = new Set(clickedHotspots);
     newClicked.add(hotspot.id);
     setClickedHotspots(newClicked);
+
+    if (onClickedCountChange) {
+      onClickedCountChange(newClicked.size);
+    }
 
     if (newClicked.size === hotspots.length) {
       setTimeout(() => onAllClicked(), 500);

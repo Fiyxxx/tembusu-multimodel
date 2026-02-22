@@ -15,6 +15,7 @@ export default function ScenarioPage() {
   const [scenario, setScenario] = useState<Scenario | null>(null);
   const [showLesson, setShowLesson] = useState(false);
   const [showLessonButton, setShowLessonButton] = useState(false);
+  const [clickedCount, setClickedCount] = useState(0);
 
   // Scenario 3 specific states
   const [quizAnswered, setQuizAnswered] = useState(false);
@@ -62,7 +63,19 @@ export default function ScenarioPage() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8 gap-4 md:gap-8">
-      <h1 className="font-mono text-xl md:text-2xl font-bold text-center px-4">{scenario.title}</h1>
+      <div className="text-center">
+        <h1 className="font-mono text-xl md:text-2xl font-bold px-4">{scenario.title}</h1>
+        {scenario.type === 'clickable' && (
+          <div className="mt-2 space-y-1">
+            <p className="font-mono text-sm text-gray-600">Click the pulsating buttons to see the thoughts</p>
+            {!showLessonButton && (
+              <p className="font-mono text-xs text-gray-500">
+                Buttons to click: {scenario.hotspots.length - clickedCount}
+              </p>
+            )}
+          </div>
+        )}
+      </div>
 
       {scenario.type === 'clickable' ? (
         <>
@@ -72,6 +85,7 @@ export default function ScenarioPage() {
               imageAlt={scenario.imageAlt}
               hotspots={scenario.hotspots}
               onAllClicked={handleAllHotspotsClicked}
+              onClickedCountChange={setClickedCount}
             />
           </div>
 
